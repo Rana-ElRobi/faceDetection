@@ -1,0 +1,13 @@
+For groups in images :
+-------------------------
+1st trial was on image no 15 
+===
+params: 
+-----------
+scaleFactor= 1.1
+minNeighbors= 3,
+minSize=(15, 15),
+
+conditions:
+-----------
+
