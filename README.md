@@ -4,7 +4,6 @@ This repo aims to detect faces from some samples of images get from yelp challen
 For groups in images :
 -------------------------
 # 1st trial was on image no 15 
-===
 params: 
 -------
 scaleFactor= 1.1
