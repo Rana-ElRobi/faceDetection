@@ -25,4 +25,15 @@ conditions:
 -----------
 No conditions
 
+# 3rd Trial was on image no 2
+Params:
+-------
+scaleFactor= 1.02
+minNeighbors= 4,
+minSize=(30, 30)
+
+conditions:
+-----------
+No conditions
+
 
