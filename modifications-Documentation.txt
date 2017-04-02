@@ -10,4 +10,11 @@ minSize=(15, 15),
 
 conditions:
 -----------
+limited the width of the face detected to be avarage of the all detected face
+
+============================================
+============================================
+2nd Trial was on image no 3
+===
+
 
