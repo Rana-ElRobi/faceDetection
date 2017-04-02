@@ -91,7 +91,7 @@ def image15(colorimg,grayimg):
 	    		print(" w :",w)
 	    		print(" h :",h)
 			cv2.imshow("Faces found" ,colorimg)
-			cv2.imwrite("face {0}.png".format(i),colorimg)
+			cv2.imwrite("face 15.png",colorimg)
 			cv2.waitKey(0)
 # main function
 def main():	
