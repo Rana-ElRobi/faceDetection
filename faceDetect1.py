@@ -171,6 +171,40 @@ def image2(colorimg,grayimg):
 		cv2.imshow("Faces found" ,colorimg)
 		cv2.imwrite("face 2.png",colorimg)
 		cv2.waitKey(0)
+# General function modified for getting all faces
+# face detection function
+# input : 
+#--------
+# fi : target imges stack 
+# gi : target images stack in gray scale
+# =====================
+# output:
+# -------
+# display imges with green fram in the detected imges
+# Helper link :
+# https://realpython.com/blog/python/face-recognition-with-python/
+def modifiedfaceFinder(fi,gi):
+	cascPath = "/home/rana/Desktop/yelp/faceDetection/FaceDetect/haarcascade_frontalface_default.xml"
+	# Create the haar cascade
+	faceCascade = cv2.CascadeClassifier(cascPath)
+	# Loop on the images stack
+	for i,item in enumerate (gi):
+		# Detect faces in the image
+		faces = faceCascade.detectMultiScale(
+		    item,
+		    scaleFactor=1.03,
+		    minNeighbors= 6,
+		    minSize=(30, 30),
+		    flags = cv2.cv.CV_HAAR_SCALE_IMAGE
+		)
+		print "Found {0} faces!".format(len(faces))
+		# Draw a rectangle around the faces
+		for (x, y, w, h) in faces:
+		    cv2.rectangle(fi[i], (x, y), (x+w, y+h), (0, 255, 0), 2)
+		cv2.imshow("Faces found" ,fi[i])
+		cv2.imwrite("face {0}.png".format(i),fi[i])
+		cv2.waitKey(0)
+
 # main function
 def main():	
 	# load face imgs
@@ -185,4 +219,6 @@ def main():
 	#image7(faceImgs[7],grayfaces[7])
 	# costumizations on image 2
 	#image2(faceImgs[2],grayfaces[2])
+	# make general function for all images modified
+	modifiedfaceFinder(faceImgs,grayfaces)
 main()
