@@ -66,7 +66,7 @@ def findFacaes(fi,gi):
 		cv2.waitKey(0)
 		#break
 # function that works on custmizing the face detection on image 17
-def image17(colorimg,grayimg):
+def image17(colorimg,grayimg, no):
 	cascPath = "/home/rana/Desktop/yelp/faceDetection/FaceDetect/haarcascade_frontalface_default.xml"
 	# Create the haar cascade
 	faceCascade = cv2.CascadeClassifier(cascPath)
@@ -89,7 +89,7 @@ def image17(colorimg,grayimg):
 		print(" w :",w)
 		print(" h :",h)
 		cv2.imshow("Faces found" ,colorimg)
-		cv2.imwrite("face 17.png",colorimg)
+		cv2.imwrite("face {0}.png".format(no),colorimg)
 		cv2.waitKey(0)
 # This function trie dto custmize the parameters of face detection to find all people in the image no 15
 def image15(colorimg,grayimg):
@@ -176,13 +176,13 @@ def main():
 	# load face imgs
 	faceImgs , grayfaces = loadfaces()
 	# General face detection
-	findFacaes(faceImgs,grayfaces)
+	#findFacaes(faceImgs,grayfaces)
 	# costumizations on image 17
-	image17(faceImgs[17],grayfaces[17])
+	#image17(faceImgs[17],grayfaces[17],17)
 	# costumizations on image 15
-	image15(faceImgs[15],grayfaces[15])	
+	#image15(faceImgs[15],grayfaces[15])	
 	# costumizations on image 7
-	image7(faceImgs[7],grayfaces[7])
+	#image7(faceImgs[7],grayfaces[7])
 	# costumizations on image 2
-	image2(faceImgs[2],grayfaces[2])
+	#image2(faceImgs[2],grayfaces[2])
 main()
